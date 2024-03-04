@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Songs</title>
+</head>
+<body>
+	<nav style="text-align: right; font-size: 20px; margin-top: 20px; margin-right: 20px;">
+		<div style="margin-bottom: 10px;">
+			<em>Hello, <strong style="font-size: 25px;" th:text="${session.name}"></strong>!!!</em><br/>
+		</div>
+		<div style="font-size: 15px; margin-right: 20px;">
+			<a href="/logout">Logout</a>
+		</div>
+	</nav>
+	<hr>
+	<h1>Song Details:</h1>
+	<form action="/addSong" method="post">
+		<label>Song Name: <input type="text" placeholder="Enter song name" name="name" /></label><br/><br/>
+		<label>Song Artist: <input type="text" placeholder="Enter artist name" name="artist" /></label><br/><br/>
+		<label>Song Genre: <input type="text" placeholder="Enter song genre" name="genre" /></label><br/><br/>
+		<label>Song Link: <input type="text" placeholder="Provide song link" name="link" /></label><br/><br/>
+		<input type="submit" value="ADD SONGS"/>
+	</form>
+</body>
+</html>

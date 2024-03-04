@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Playlist</title>
+</head>
+<body>
+	<nav style="text-align: right; font-size: 20px; margin-top: 20px; margin-right: 20px;">
+		<div style="margin-bottom: 10px;">
+			<em>Hello, <strong style="font-size: 25px;" th:text="${session.name}"></strong>!!!</em><br/>
+		</div>
+		<div style="font-size: 15px; margin-right: 20px;">
+			<a href="/logout">Logout</a>
+		</div>
+	</nav>
+	<hr>
+	<h2>Playlists:</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Playlist ID</th>
+				<th>Playlist Name</th>
+				<th>Playlist Songs</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pl:${playlist}">
+				<td th:text="${pl.id}"></td>
+				<td th:text="${pl.name}"></td>
+				<td>
+					<ul>
+						<li th:each="s:${pl.song}" style="list-style: none;">
+							<span th:text="${s.name}"></span><br/>
+							<audio th:src="${s.link}" type="audio/mpeg" controls></audio>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

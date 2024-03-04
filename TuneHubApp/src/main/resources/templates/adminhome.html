@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Home</title>
+</head>
+<body>
+	<nav style="text-align: right; font-size: 20px; margin-top: 20px; margin-right: 20px;">
+		<div style="margin-bottom: 10px;">
+			<em>Hello, <strong style="font-size: 25px;" th:text="${session.name}"></strong>!!!</em><br/>
+		</div>
+		<div style="font-size: 15px; margin-right: 20px;">
+			<a href="/logout">Logout</a>
+		</div>
+	</nav>
+	<hr>
+	<h1>Welcome Admin</h1>
+	<form action="/map-addsong" method="get">
+		<input type="submit" value="ADD SONGS" /><br/><br/>
+	</form>
+	<form action="/viewsong" method="get">
+		<input type="submit" value="VIEWS SONGS"/><br/><br/>
+	</form>
+	<form action="/map-createplaylist" method="get">
+		<input type="submit" value="CREATE PLAYLIST"/><br/><br/>
+	</form>
+	<form action="/viewplaylist" method="get">
+		<input type="submit" value="VIEW PLAYLISTS"/><br/><br/>
+	</form>
+</body>
+</html>

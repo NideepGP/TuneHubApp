@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Songs</title>
+</head>
+<body>
+	<nav style="text-align: right; font-size: 20px; margin-top: 20px; margin-right: 20px;">
+		<div style="margin-bottom: 10px;">
+			<em>Hello, <strong style="font-size: 25px;" th:text="${session.name}"></strong>!!!</em><br/>
+		</div>
+		<div style="font-size: 15px; margin-right: 20px;">
+			<a href="/logout">Logout</a>
+		</div>
+	</nav>
+	<hr>
+	<h1>Songs:</h1>
+	<table border="1">
+		<tr>
+			<td>Song Name</td>
+			<td>Song Artist</td>
+			<td>Song Genre</td>
+			<td>Song Link</td>
+		</tr>
+		<tr th:each="songs:${songs}">
+			<td th:text="${songs.name}"></td>
+			<td th:text="${songs.artist}"></td>
+			<td th:text="${songs.genre}"></td>
+			<td><audio th:src="${songs.link}" type="audio/mp3" controls ></audio></td>
+		</tr>
+	</table>
+</body>
+</html>
